@@ -1,7 +1,5 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const {WebhookClient} = require('dialogflow-fulfillment');
-"postgres://iyuaawwnbtjugr:e99d7d5bb9a86ca7aed0aee1a9e86ff8f907a00d64990b7daf6327b84ac6dcfe@ec2-34-232-191-133.compute-1.amazonaws.com:5432/ddlac84kto2lmu"
 
 
 
@@ -32,21 +30,7 @@ const dialogflowFulfillment = (request, response) => {
     }
     function findLoc(agent) {   
 
-        /*console.log(agent.parameters.locationHK)
-        console.log(agent.parameters.cuisine)       
-        const client = new Client({connectionString: connectionString})
-        client.connect()
-
-        client.query("select * from restinfo where locationhk = '"+ agent.parameters.locationhk +"'and cuisine = '"+ agent.parameters.cuisine +"'limit 1", (err,res) =>{
-            //console.log(err,res) 
-            for (let row of res.rows) {
-                console.log(row);
-            }
-             
-            client.end()
-        })*/
-
-    if(agent.parameters.locationhk=="Central" && agent.parameters.cuisine=="Japanese") {  
+   if(agent.parameters.locationhk=="Central" && agent.parameters.cuisine=="Japanese") {  
         agent.add("Location is: " + agent.parameters.locationhk)
         agent.add("Chosen cuisine is: " +agent.parameters.cuisine)
         agent.add("Suggested restaurant: Tokyo Milk Cheese Factory")
