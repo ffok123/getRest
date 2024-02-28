@@ -2,7 +2,9 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const {WebhookClient} = require('dialogflow-fulfillment');
 
-
+app.get('/', (req, res) => {
+  res.send('hello world')
+})
 
 const app = express()
 app.use(bodyParser.json())
