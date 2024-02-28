@@ -67,7 +67,7 @@ const dialogflowFulfillment = (request, response) => {
 
     let intentMap = new Map();
     intentMap.set("Default Welcome Intent", sayHello)
-    intentMap.set("locationEnquiry", findLoc)
+    intentMap.set("cuisineEnquiry", findLoc)
 
     agent.handleRequest(intentMap);
     
