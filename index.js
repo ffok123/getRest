@@ -58,34 +58,12 @@ const dialogflowFulfillment = (request, response) => {
 
 
     }
-    function findRestHK(agent) {
-        //agent.add("Please enter another cusine")
-        if(agent.parameters.locationhk=="Central" && agent.parameters.cuisine=="Japanese") {  
-         
-            agent.add("Another suggested restaurant: S2 Kitchen")
-            agent.add("Address:Shop A, G/F, 51 Wellington Street, Central")
-            agent.add("Price:$400-$800") 
-            agent.add("Do you like this restaurant (Yes/No)?") }
-        else if (agent.parameters.locationhk=="Tsing Yi" && agent.parameters.cuisine=="Korean") {  
-   
-            agent.add("Another suggested restaurant: NeNe Chicken")
-            agent.add("Address:Shop 226, 2/F, Maritime Square 2, 33 Tsing King Road, Tsing Yi")
-            agent.add("Price:$100-$200") 
-            agent.add("Do you like this restaurant (Yes/No?)") }
-        else if (agent.parameters.locationhk=="Sha Tin" && agent.parameters.cuisine=="Japanese") {  
-
-            agent.add("Another suggested restaurant: Tonkichi Tonkatsu Seafood")
-            agent.add("Shop 707, 7/F, New Town Plaza Phase 1, 18 Sha Tin")
-            agent.add("Price:$200-400") 
-            agent.add("Do you like this restaurant (Yes/No?)") }
-
-
-    }
+ 
 
     let intentMap = new Map();
     intentMap.set("Default Welcome Intent", sayHello)
     intentMap.set("locationEnquiry", findLoc)
-    intentMap.set("locationEnquiry-no", findRestHK)
+
     agent.handleRequest(intentMap);
     
 
